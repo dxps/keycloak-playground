@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>News :: List</title>
+</head>
+<body>
+
+<h1>News</h1>
+
+<p>Welcome <span th:text="${user}"></span>! This page is protected. You have user privileges.</p>
+
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/logout">Logout</a></li>
+</ul>
+
+</body>
+</html>
