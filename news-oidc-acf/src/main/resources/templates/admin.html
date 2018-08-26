@@ -8,7 +8,10 @@
 
 <div class="container">
 
-    <h1>Administration</h1>
+    <div class="jumbotron">
+        <h2>News &gt; Admin</h2>
+        <p>Administration of this platform</p>
+    </div>
 
     <p>Welcome <b><span th:text="${user}"></span></b>! You have admin privileges.</p>
 
@@ -18,8 +21,7 @@
         <li><a href="/logout">Logout</a></li>
     </ul>
 
-    <div id="pagefoot" th:include="common-layout :: footerFragment">Footer
-    </div>
+    <div id="pagefoot" th:include="common-layout :: footerFragment">Footer</div>
 
 </div> <!-- end of container -->
 
