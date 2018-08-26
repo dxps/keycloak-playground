@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:include="common-layout :: headerFragment">
     <meta charset="UTF-8" />
     <title>News :: Home</title>
 </head>
 <body>
 
-<h1>News</h1>
+<div class="container">
 
-<p>This is a public area.</p>
+    <h1>News</h1>
 
-<ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="/news">News</a></li>
-    <li><a href="/admin">Admin</a></li>
-</ul>
+    <p>This is a public area.</p>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/admin">Admin</a></li>
+    </ul>
+
+    <div id="pagefoot" th:include="common-layout :: footerFragment">Footer
+    </div>
+
+</div> <!-- end of container -->
 
 </body>
 </html>
