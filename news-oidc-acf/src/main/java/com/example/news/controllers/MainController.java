@@ -46,4 +46,9 @@ public class MainController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/access-denied", method = RequestMethod.GET)
+    public String handleAccessDenied(HttpServletRequest request) throws ServletException {
+        return "access-denied";
+    }
+
 }

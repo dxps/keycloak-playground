@@ -1,4 +1,11 @@
-## News - An OIDC IF demo
+## News - An OIDC ACF demo
 
-This is a demo of OpenID Connect (OIDC) Implicif Flow.
+This is a demo of OpenID Connect (OIDC) Authorization Code Flow.
+
+### Settings
+
+- at Keycloak level
+    - client
+        - access type: confidential
+        - credentials > secret: ...
 
