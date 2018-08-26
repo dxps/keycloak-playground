@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>news</name>
-	<description>Demo of OIDC Implicit Flow with Keycloak</description>
+	<description>Demo of OIDC Authorization Code Flow with Keycloak</description>
 
 	<properties>
 
