@@ -12,11 +12,11 @@ import java.security.Principal;
 
 
 @Controller
-public class MainController {
+public class AppController {
 
     private NewsService newsService;
 
-    public MainController(NewsService newsService) {
+    public AppController(NewsService newsService) {
         this.newsService = newsService;
     }
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="common-layout :: headerFragment">
+    <meta charset="UTF-8" />
+    <title>News :: Error - Internal</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h2>News &gt; Error: Internal Issue</h2>
+        <p>Error Details: <span th:text="${errorMsg}">n/a</span></p>
+    </div>
+
+    <p>Sorry, but an internal error has occurred.</p>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <div id="pagefoot" th:include="common-layout :: footerFragment">Footer</div>
+
+</div> <!-- end of container -->
+
+</body>
+</html>
