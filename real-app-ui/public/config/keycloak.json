@@ -1,0 +1,8 @@
+{
+  "realm": "demo-react",
+  "auth-server-url": "http://localhost:8100/auth",
+  "ssl-required": "external",
+  "resource": "real-app",
+  "public-client": true,
+  "confidential-port": 0
+}
