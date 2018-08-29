@@ -8,6 +8,11 @@ skinparam Sequence {
   MessageAlignment center
 }
 
+title
+Authorization Code Flow of OpenID Connect
+in a React.js based UI setup
+endtitle
+
 actor User as user
 participant Browser as browser
 participant "real-app-ui" as ui
@@ -63,7 +68,7 @@ footer
 
 ""<b>authenticate</b> response code 302 with location header containing the redirect_uri value, the authorization code, plus a state and session_state              ""
 
-""<b>token</b> endpoint is used for exchanging the authorization code to get the three tokens""
+""<b>token</b> endpoint is used for exchanging the authorization code to get the three (id, access, and refresh) tokens                                             ""
 
 endfooter
 |||
