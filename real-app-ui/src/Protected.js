@@ -10,8 +10,8 @@ class Protected extends Component {
 
     componentDidMount() {
         const keycloak = Keycloak('/config/keycloak.json');
-        keycloak.init({onLoad: 'login-required'}).then(authenticated => {
-            this.setState({keycloak: keycloak, authenticated: authenticated})
+        keycloak.init({ onLoad: 'login-required' }).then(authenticated => {
+            this.setState({ keycloak: keycloak, authenticated: authenticated })
         })
     }
 

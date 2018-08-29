@@ -1,0 +1,70 @@
+@startuml
+
+skinparam roundcorner 10
+skinparam shadowing false
+skinparam ParticipantPadding 60
+skinparam Sequence {
+  DividerBorderColor #eee
+  MessageAlignment center
+}
+
+actor User as user
+participant Browser as browser
+participant "real-app-ui" as ui
+participant "Keycloak Server" as kc
+
+== ==
+
+user -> browser: access the app  .
+activate browser
+browser -> ui: get /
+activate ui
+ui -> browser: html code
+deactivate ui
+
+browser <->o ui:  additional requests\nfor rendering the page
+browser -> browser: load React app\nrender the DOM
+
+== ==
+
+user -> browser: click Protected
+browser -> browser: Keycloak JS Adapter init\nDetect user not authenticated\nRedirect to Keycloak Server
+
+browser -> kc: /auth/realms/demo-react/protocol/openid-connect/<b>auth</b>
+kc -> browser: login page html code
+
+== ==
+
+user -> browser: enter credentials
+browser -> kc: /auth/realms/demo-react/login-actions/<b>authenticate</b>
+kc -> browser: redirect back to UI (to /protected), incl. authorization code
+browser -> ui: get /protected
+activate ui
+ui -> browser: html response
+deactivate ui
+browser <->o ui:  additional requests\nfor rendering the page
+browser -> browser: load React app\nrender the DOM
+
+== ==
+
+browser -> kc: post /auth/realms/demo-react/protocol/openid-connect/<b>token</b>
+kc -> browser: identity, access, and refresh tokens
+
+== ==
+
+browser -> browser: Keycloak JS Adapter\n    validates the tokens
+deactivate browser
+
+footer
+
+
+""<b>auth</b> request query params: client_id=real-app response_type=code scope=openid redirect_uri=http://localhost:3000/protected                                 ""
+""and additional OIDC specific params: state, nonce, and response_mode                                 ""
+
+""<b>authenticate</b> response code 302 with location header containing the redirect_uri value, the authorization code, plus a state and session_state              ""
+
+""<b>token</b> endpoint is used for exchanging the authorization code to get the three tokens""
+
+endfooter
+|||
+@enduml
